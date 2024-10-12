@@ -1,0 +1,76 @@
+# https://themeparks.appspot.com/?utm_source=gh-page&utm_medium=affiliate&utm_term=&utm_content=definition-link&utm_campaign=website
+- name: react-native-at-internet
+  summary: Implementation of ATInternet Android & iOS packages for React Native
+  status: archived
+  description: |
+    Implementation of ATInternet Android & iOS packages for React Native
+  technologies:
+    - React Native (Swift & Kotlin)
+    - AT Internet
+  links:
+    - name: GitHub project
+      url: https://github.com/lemonde/react-native-at-internet
+      description: Source code
+- name: phalcon-abtest
+  summary: A library for AB Testing and counting results
+  status: archived
+  description: |
+    A library for AB Testing and counting results
+  technologies:
+    - Phalcon
+    - Redis
+  links:
+    - name: GitHub project
+      url: https://github.com/lemonde/phalcon-abtest
+      description: Source code
+- name: Themeparks
+  summary: Multiple themeparks wait time
+  status: archived
+  description: |
+    A web interface for [cubehouse's themeparks](https://github.com/cubehouse/themeparks).
+  technologies:
+    - NodeJS
+- name: Yopa
+  summary: Analytic solution
+  status: archived
+  description: |
+    An open source analytic solution built with NodeJS and a dashboard built with Symfony 4.
+    Takes adavantage of ExpressJS middleware.
+    Simply deployable with Heroku.
+  technologies:
+    - Typescript
+    - ExpressJS, TypeORM
+    - PostgreSQL
+    - Symfony 4
+  links:
+    - name: Github Organization
+      url: https://github.com/yopa-analytic
+      description: Source code
+- name: Discard
+  summary: Discord bot linked with Blizzard's API
+  status: in progress
+  description: A single binary that runs a bot on a discord guild, with command registerer and rich embed
+  technologies:
+    - Typescript
+    - Mocha, Chai, Sinon
+    - Test driven development
+- name: Ubuntu server
+  summary: DevOps
+  description: Private server for personal hosting & testing. Installation of GitLab, nginx, PHP
+  technologies:
+    - Ubuntu 16.04
+    - nginx
+    - ufw
+- name: Cofee
+  summary: RSS/Atom aggregator
+  status: abandonned
+  description: |
+    Mobile application that allows users to register to feed, add one to registry and suggest other content base on current post,
+    registered feeds and global upvotes and downvotes.
+    Sync is made thanks to Google's PubSubHubbub ; Suggestion is made with dediccated Elasticsearch.
+  technologies:
+    - Ionic2
+    - Angular2
+    - Symfony3
+    - PubSubHubBub
+    - Elasticsearch

@@ -1,0 +1,17 @@
+{
+  "name": "senorihl.github.io",
+  "version": "1.0.0",
+  "description": "My GitHub page",
+  "main": "index.js",
+  "repository": "git@github.com:senorihl/senorihl.github.io.git",
+  "author": "Senorihl <rodolphe.renaux@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@picocss/pico": "^2.0.6",
+    "@primer/css": "^21.4.0"
+  },
+  "devDependencies": {
+    "sass": "^1.79.5"
+  }
+}

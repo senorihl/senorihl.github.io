@@ -1,0 +1,92 @@
+@import "../node_modules/@picocss/pico/scss/colors";
+
+  .TimelineItem {
+    display: flex;
+    margin-left: 16px;
+    padding: 16px 0;
+    position: relative;
+
+    &:before {
+      background-color: $zinc-450;
+      bottom: 0;
+      content: "";
+      display: block;
+      left: 0;
+      position: absolute;
+      width: 2px;
+    }
+
+    &:first-child {
+      &:before {
+        bottom: 0;
+        height: 50%
+      }
+    }
+
+    &:not(:first-child) {
+      &:before {
+        top: 0;
+      }
+    }
+
+    &:last-child {
+      &:before {
+        height: 50%
+      }
+    }
+  }
+
+  .TimelineItem-badge {
+    align-items: center;
+    background-color: $zinc-450;
+    border: 4px solid var(--pico-background-color);
+    border-radius: 50%;
+    color: $zinc-50;
+    display: flex;
+    flex-shrink: 0;
+    height: 2.5em;
+    justify-content: center;
+    margin-left: calc(2.5em / -2 + 2px);
+    margin-right: 8px;
+    position: relative;
+    width: 2.5em;
+    z-index: 1;
+
+    .TimelineItem--condensed & {
+      margin-left: calc(2.5em / -2 + 1px);
+
+    }
+  }
+
+  .TimelineItem-badge--success {
+    background-color: $green-500;
+    border: 2px solid #0000;
+    color: $zinc-850
+  }
+
+  .TimelineItem-body {
+    color: $zinc-450;
+    flex: auto;
+    margin-top: 4px;
+    max-width: 100%;
+    min-width: 0
+  }
+
+  .TimelineItem--condensed {
+    padding-bottom: 0;
+    padding-top: 4px
+  }
+
+  .TimelineItem--condensed:last-child {
+    padding-bottom: 2px
+  }
+
+  .TimelineItem--condensed .TimelineItem-badge {
+    background-color: var(--pico-background-color);
+    border: 0;
+    color: $zinc-450;
+    height: 16px;
+    margin-bottom: 8px;
+    margin-top: 8px
+  }
+

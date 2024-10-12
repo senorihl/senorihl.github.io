@@ -1,0 +1,48 @@
+{% assign content = page.content %}
+
+{% assign posts_total = site.posts | size %}
+
+{% assign user = site.github.owner %}
+
+{% if page.path contains '_posts' %}
+    {% assign page_title = page.title %}
+    {% assign meta_description = page.content | strip_html | strip_newlines | xml_escape | truncate: 300 %}
+{% else %}
+    {% assign page_title = user.name %}
+    {% assign meta_description = user.bio | strip_html | strip_newlines | xml_escape | truncate: 300 %}
+{% endif %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% if page.use-site-title %}{{ site.title }} {{ site.title-separator }} {{ site.description }}{% elsif page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="author" content="{{ site.author.name }}"/>
+    {% if page.subtitle %}
+        <meta name="description" content="{{ page.subtitle }}">
+    {% endif %}
+    <link rel="alternate" type="application/rss+xml"
+          title="{{ site.title }} {{ site.title-separator }} {{ site.description }}"
+          href="{{ '/feed.xml' | absolute_url }}"/>
+    <meta property="og:title" content="{{ user.name }}"/>
+    <meta property="og:image" content="{{ user.avatar_url }}"/>
+    <meta property="og:description" content="{{ meta_description }}"/>
+    <link rel="canonical"
+          href="{% if page.url == '/' %}{{ site.url }}{% else %}{{ page.url | relative_url }}{% endif %}"/>
+    <link href="{{ "/assets/css/site.css" | relative_url }}" rel="stylesheet" type="text/css">
+    {% if site.google_tracking_id %}{% include google_analytics.html %}{% endif %}
+</head>
+<body>
+<nav class="container">
+    <ul>
+        <li><strong><a class="contrast"
+                       href="{{ '/' | relative_url }}">{{ site.title }}</a></strong>
+        </li>
+    </ul>
+    <ul>
+        <li><a href="{{ '/aboutme' | relative_url }}">About me</a></li>
+        <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
+    </ul>
+</nav>

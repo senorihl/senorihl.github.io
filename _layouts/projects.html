@@ -1,0 +1,48 @@
+---
+layout: compress
+---
+
+{% include header.html %}
+<article>
+    <div class="container">
+        <h1>Projects</h1>
+    </div>
+</article>
+<div class="container">
+
+    {% for project in site.data.projects %}
+
+        <article class="project">
+
+            <h2 style="margin: 0; margin-top: 1em; font-size: unset;font-weight: normal;">
+                <!-- <%= octicon("repo") %> -->
+                {% octicon repo height: 16 %}
+                <b>{{ project.name }}</b>
+                <span class="path-divider">/</span>
+                <small>{{ project.summary }}</small>
+            </h2>
+
+            <p>{{ project.description | markdownify }}</p>
+
+            {% assign technologies_length = project.technologies | size %}
+            {% if technologies_length > 0 %}
+                <p><b>Technologies</b>: {{ project.technologies | join: ', ' }}</p>
+            {% endif %}
+
+            {% assign links_length = project.links | size %}
+            {% if links_length > 0 %}
+                <p><b>Links</b>: </p>
+                <ul class="pl-5">
+                    {% for link in project.links %}
+                        <li><a href="{{ link.url }}"
+                               target="_blank">{{ link.name }}</a>{% if link.description %} : {{ link.description }}{% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+
+            {% endif %}
+        </article>
+    {% endfor %}
+</div>
+
+{% include footer.html %}

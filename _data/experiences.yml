@@ -1,0 +1,67 @@
+-
+  title: Lead Developer
+  company: L’Obs
+  location: Paris, 75013, France
+  duration: since august 2020
+  roles:
+    - Developing from scratch the new app for L’Obs
+  technologies:
+    - React Native
+    - Batch
+    - appcenter.ms
+-
+  title: Full stack developer
+  company: Le Monde
+  location: Paris, 75013, France
+  duration: from december 2017 to october 2020
+  roles:
+    - Full stack developer working on all websites of the french newspaper Le Monde.
+  technologies:
+    - Docker
+    - Phalcon
+    - High availability
+-
+  title: Backend PHP/Symfony2 developer
+  company: Fullsix Group
+  location: Levallois-Perret, 92300, France
+  duration: 4 months
+  roles:
+    - Back-end developer for Yuge Paradiski app (french skiing ressort) & Nounou Connect (social between nanny and parents).
+  technologies:
+    - Postgre
+    - GraphQL
+    - Docker
+    - Rest API
+-
+  title: Architect & Fullstack PHP developer
+  company: BNP Paribas Partners For Innovation
+  location: Montreuil, 93100, France
+  duration: 4 years
+  roles:
+    - Develop services (authentication, user management, audit) in order to migrate internal applications from Jelix to Symfony2.
+    - Conceive and develop an internal server management application (dynamic forms, permissions, billing) in order to migrate from BMC Remedy to Symfony2 open solution.
+  technologies:
+    - Symfony2
+    - PL/SQL
+    - Agile / SCRUM
+
+-
+  formation: true
+  title: Software architect
+  duration: 2016-2017
+  company: CFA Insta
+  location: Paris, 75005, France
+
+-
+  formation: true
+  title: Software analyst
+  duration: 2014-2016
+  company: CFA Insta
+  location: Paris, 75005, France
+
+-
+  formation: true
+  title: Software technician
+  duration: 2012-2014
+  company: CFA Insta
+  location: Paris, 75005, France

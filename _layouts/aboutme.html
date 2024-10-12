@@ -1,0 +1,60 @@
+---
+layout: compress
+---
+
+{% include header.html %}
+<article>
+    <div class="container">
+        <h1>About me</h1>
+        <p>I'm a developer <i>(Really ?!)</i> loving to learn new things and acquired new skills.</p>
+        <p>I usually work with PHP and Symfony but some times with some Javascript and related frameworks.</p>
+        <p>In addition I try to learn DevOps shits such as web server administration and setup <i>(I like to handle my
+                own crappy projects)</i>.</p>
+        <p>Not inclined to unicorns stuff I'd rather look at the starts and hope that we will be up there in some short
+            time.</p>
+
+        <p><b>Enjoy coding, enjoy debugging, enjoy discovering !</b></p>
+    </div>
+</article>
+<div class="container">
+    {% for experience in site.data.experiences %}
+
+        <div class="TimelineItem">
+            <div class="TimelineItem-badge">
+                {% if experience.formation %}
+                    {% octicon mortar-board height: 16 %}
+                {% else %}
+                    {% octicon briefcase height: 16 %}
+                {% endif %}
+            </div>
+
+            <div class="TimelineItem-body">
+                <h2 style="font-size: unset;margin: 0;font-weight: normal;"><b>{{ experience.title }}</b>
+                    at {{ experience.company }}</h2>
+                <small>{{ experience.location }} — {{ experience.duration }}</small>
+            </div>
+        </div>
+
+        {% for role in experience.roles %}
+            <div class="TimelineItem TimelineItem--condensed">
+                <div class="TimelineItem-badge">
+                    {% octicon dot-fill height: 16 fill-rule: evenodd %}
+                </div>
+                <p class="TimelineItem-body">{{ role }}</p>
+            </div>
+        {% endfor %}
+
+        {% assign technologies = experience.technologies | join: ', ' %}
+        {% unless technologies == "" %}
+            <div class="TimelineItem TimelineItem--condensed">
+                <div class="TimelineItem-badge">
+                    {% octicon code height: 16 fill-rule: evenodd %}
+                </div>
+                <p class="TimelineItem-body">Technologies and tools: {{ technologies }}</p>
+            </div>
+        {% endunless %}
+
+    {% endfor %}
+</div>
+
+{% include footer.html %}

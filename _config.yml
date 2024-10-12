@@ -1,0 +1,50 @@
+title: Senorihl
+description: Developer and Software Craftman
+title-separator: —
+url: "https://senorihl.github.io"
+baseurl: ""
+timezone: "Europe/Paris"
+permalink: /:year/:month/:slug/
+paginate: 6
+excerpt_length: 50
+date_format: "%B %-d, %Y"
+google_tracking_id: UA-70834668-4
+
+exclude: [ package.json, yarn.lock, .idea, node_modules ]
+
+plugins:
+  - jekyll-octicons
+  - jekyll-github-metadata
+  - jemoji
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-minifier
+  - jekyll-redirect-from
+
+whitelist:
+  - jekyll-redirect-from
+
+compress_html:
+  clippings: all
+  comments: all
+  endings: all
+  profile: true
+  startings: [head, body]
+
+social_media:
+  # behance: your_username
+  # dribbble: your_username
+  # facebook: your_username
+  # hackerrank: your_username
+  # instagram: your_username
+  # keybase: your_username
+  linkedin: senorihl
+  # mastodon: your_username
+  # medium: your_username
+  stackoverflow: 2414324
+  # telegram: your_username
+  # twitter: senorihl
+  # unsplash: your_username
+  # vk: your_username
+  # website: http://your_website_url
+  # youtube: your_username

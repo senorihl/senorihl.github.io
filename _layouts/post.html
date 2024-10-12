@@ -1,0 +1,97 @@
+---
+layout: compress
+---
+
+{% include header.html %}
+
+<article>
+    <hgroup class="container">
+        <h1>{{ page.title }}</h1>
+        {% unless page.subtitle == "" %}
+            <p>{{ page.subtitle }}</p>
+            <p>Published {{ page.date | date: "%b %d, %Y" }}
+                <img src="https://visitor-badge.laobi.icu/badge?page_id=senorihl.blog.{{ page.title | slugify }}"
+                     alt="visitor badge"/></p>
+        {% endunless %}
+    </hgroup>
+
+    <div class="container">
+        <p>
+            {% if page.tags.size > 0 %}
+                <span>Tags:</span>
+                {% for tag in page.tags %}
+                    <a class="Label"
+                       href="{{ '/tags' | relative_url }}#{{- tag | slugify -}}">{% octicon tag height: 14 %}
+                        &nbsp;{{- tag -}}</a>
+                {% endfor %}
+            {% endif %}
+        </p>
+        {% if page.gh-repo %}
+            <div class="Box">
+                {% assign parts = page.gh-repo | split: '/' %}
+                {% assign gh_user = parts[0] %}
+                {% assign gh_repo = parts[1] %}
+                <p>
+                    {% octicon repo height: 20 %}
+                    <span class="author"><a href="https://github.com/{{ parts[0] }}" target="_blank"
+                                            class="url fn" rel="author">{{ parts[0] }}</a></span>
+                    <span class="path-divider">/</span>
+                    <strong><a href="https://github.com/{{ parts[0] }}/{{ parts[1] }}"
+                               target="_blank">{{ parts[1] }}</a></strong>
+                </p>
+                {% if page.gh-badge.size > 0 %}
+                    <div>
+                        {% for badge in page.gh-badge %}
+                            {% case badge %}
+                                {% when 'star' %}
+                                    <a class="github-button"
+                                       href="https://github.com/{{ gh_user }}/{{ gh_repo }}"
+                                       data-color-scheme="no-preference: light; light: light; dark: dark;"
+                                       data-size="large" data-show-count="true"
+                                       aria-label="Star senorihl/dsds on GitHub">Star</a>
+                                {% when 'watch' %}
+                                    <a class="github-button"
+                                       href="https://github.com/{{ gh_user }}/{{ gh_repo }}/subscription"
+                                       data-color-scheme="no-preference: light; light: light; dark: dark;"
+                                       data-size="large" data-show-count="true"
+                                       aria-label="Watch senorihl/dsds on GitHub">Watch</a>
+                                {% when 'fork' %}
+                                    <a class="github-button"
+                                       href="https://github.com/{{ gh_user }}/{{ gh_repo }}/fork"
+                                       data-color-scheme="no-preference: light; light: light; dark: dark;"
+                                       data-size="large" data-show-count="true"
+                                       aria-label="Fork buttons/github-buttons on GitHub">Fork</a>
+                                {% when 'follow' %}
+                                    <a class="github-button" href="https://github.com/{{ gh_user }}"
+                                       data-color-scheme="no-preference: light; light: light; dark: dark;"
+                                       data-size="large" data-show-count="true"
+                                       aria-label="Follow @senorihl on GitHub">Follow @{{ gh_user }}</a>
+                            {% endcase %}
+                        {% endfor %}
+                    </div>
+                    <script async defer src="https://buttons.github.io/buttons.js"></script>
+                {% endif %}
+            </div>
+        {% endif %}
+        {{ content }}
+    </div>
+</article>
+
+{% if page.previous.url or page.next.url %}
+    <section>
+        <nav aria-label="Pagination" style="justify-content: center;">
+            <div>
+                {% if page.next.url %}
+                    <a role="button" rel="next" href="{{ page.next.url | relative_url }}" title="{{ page.next.title }}">Newer
+                        Post</a>
+                {% endif %}
+                {% if page.previous.url %}
+                    <a role="button" rel="prev" href="{{ page.previous.url | relative_url }}"
+                       title="{{ page.previous.title }}">Older Post</a>
+                {% endif %}
+            </div>
+        </nav>
+    </section>
+{% endif %}
+
+{% include footer.html %}

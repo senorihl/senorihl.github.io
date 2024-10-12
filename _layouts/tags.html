@@ -1,0 +1,52 @@
+---
+layout: compress
+---
+
+{% include header.html type="page" %}
+
+<section class="container">
+    {% assign date_format = site.date_format | default: "%B %-d, %Y" %}
+
+    {%- capture site_tags -%}
+        {%- for tag in site.tags -%}
+            {{- tag | first -}}{%- unless forloop.last -%},{%- endunless -%}
+        {%- endfor -%}
+    {%- endcapture -%}
+    {%- assign tags_list = site_tags | split: ',' | sort -%}
+
+
+    <ul class="list-inline">
+        {%- for tag in tags_list -%}
+            <li><a href="#{{- tag | slugify -}}">{% octicon tag height: 14 %}&nbsp;{{- tag -}}
+                    &nbsp;({{ site.tags[tag].size }})</a></li>
+        {%- endfor -%}
+    </ul>
+
+    <div id="full-tags-list">
+        {%- for tag in tags_list -%}
+            <div class="TimelineItem">
+                <div class="TimelineItem-badge">
+                    {% octicon tag height: 16 %}
+                </div>
+                <div class="TimelineItem-body">
+                    <h2 id="{{- tag | slugify -}}" class="f4">
+                        &nbsp;{{- tag -}}&nbsp;({{ site.tags[tag].size }})
+                    </h2>
+                </div>
+            </div>
+            {%- for post in site.tags[tag] -%}
+                <div class="TimelineItem TimelineItem--condensed">
+                    <div class="TimelineItem-badge">
+                        {% octicon git-commit height: 16 %}
+                    </div>
+                    <div class="TimelineItem-body">
+                        <a href="{{ post.url | relative_url }}">{{- post.title -}}</a> on
+                        <time datetime="{{- post.date | date_to_xmlschema -}}">{{- post.date | date: date_format -}}</time>
+                    </div>
+                </div>
+            {%- endfor -%}
+        {%- endfor -%}
+    </div>
+</section>
+
+{% include footer.html %}
