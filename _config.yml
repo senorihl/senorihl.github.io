@@ -9,6 +9,7 @@ paginate: 6
 excerpt_length: 50
 date_format: "%B %-d, %Y"
 google_tracking_id: UA-70834668-4
+repository: senorihl/senorihl.github.io
 
 exclude: [ package.json, yarn.lock, .idea, node_modules, vendor ]
 
