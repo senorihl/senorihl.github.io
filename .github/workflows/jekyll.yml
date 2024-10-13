@@ -43,6 +43,7 @@ jobs:
 
       - name: Build the CSS files
         run: |
+          yarn
           yarn sass _sass:assets/css
 
       - name: Setup Pages
