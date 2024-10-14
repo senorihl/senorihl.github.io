@@ -1,0 +1,19 @@
+{% assign subtitle = page.content | strip_html | strip_newlines | xml_escape | truncate: 60 %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": {{ canonical | jsonify }}
+    },
+    "headline": {{ page.title | jsonify }},
+    "description": {{ page.subtitle | default: subtitle | jsonify }},
+    "author": {
+        "@type": "Person",
+        "name": {{ site.title | jsonify }},
+        "url": {{ site.url | absolute_url | jsonify }}
+    },
+    "datePublished": {{ page.date |  date: "%FT%T%:z" | jsonify }}
+}
+</script>

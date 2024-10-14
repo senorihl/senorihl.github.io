@@ -1,8 +1,6 @@
 title: Senorihl
 description: Developer and Software Craftman
 title-separator: —
-url: "https://senorihl.github.io"
-baseurl: ""
 timezone: "Europe/Paris"
 permalink: /:year/:month/:slug/
 paginate: 6
@@ -33,19 +31,7 @@ compress_html:
   startings: [head, body]
 
 social_media:
-  # behance: your_username
-  # dribbble: your_username
-  # facebook: your_username
-  # hackerrank: your_username
-  # instagram: your_username
-  # keybase: your_username
+  github: senorihl
   linkedin: senorihl
-  # mastodon: your_username
-  # medium: your_username
+  mastodon: senorihl
   stackoverflow: 2414324
-  # telegram: your_username
-  # twitter: senorihl
-  # unsplash: your_username
-  # vk: your_username
-  # website: http://your_website_url
-  # youtube: your_username

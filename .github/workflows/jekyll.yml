@@ -60,7 +60,9 @@ jobs:
       - name: Build with Jekyll
         run: |
           bundle
-          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+          sed -i "s#%PAGE_ORIGIN%#${{ steps.pages.outputs.origin }}#g" _config.github.yml
+          sed -i "s#%PAGE_BASE_URL%#${{ steps.pages.outputs.base_path }}#g" _config.github.yml
+          bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --config _config.yml,_config.github.yml
         env:
           JEKYLL_ENV: production
 

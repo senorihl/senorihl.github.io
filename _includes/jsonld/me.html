@@ -1,0 +1,20 @@
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org/",
+        "@type": "Person",
+        "name": {{ site.title | jsonify }},
+        "url": {{ site.url | absolute_url | jsonify }},
+        "image": {{ user.avatar_url | jsonify }},
+        {% if site.social_media %}
+        "sameAs": [
+            {% for account in site.social_media %}
+              {% assign service_shortname = account[0] %}
+              {% assign service = site.data.social_media[service_shortname] %}
+              {% assign _url = service.profile_url_prefix | append: account[1] %}
+            {{ _url | jsonify }}{% if forloop.last == false %},{% endif %}
+          {% endfor %}
+        ],
+        {% endif %}
+        "jobTitle": "Software architect, Software craftman"
+    }
+</script>
