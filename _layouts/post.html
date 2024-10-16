@@ -76,6 +76,12 @@ layout: compress
                 {% endif %}
             </div>
         {% endif %}
+        {% for tag in page.tags %}
+            {% if tag contains 'AI generated' %}
+                <p class="warning">This article is AI generated for testing purpose and should not be considered as accurate.</p>
+            {% endif %}
+        {% endfor %}
+
         {{ content }}
     </div>
 </article>
@@ -96,5 +102,27 @@ layout: compress
         </nav>
     </section>
 {% endif %}
+
+{%- assign similar_subjects = "" | split: '' -%}
+{% for tag in page.tags %}
+    {% assign tag_posts = site.posts | where: 'tags', tag %}
+    {% for post in tag_posts %}
+        {% if post.url != page.url %}
+            {%- assign similar_subjects = similar_subjects | push: post -%}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+{%- assign similar_subjects = similar_subjects | uniq -%}
+
+<section class="container">
+    {% if similar_subjects.size > 0 %}
+        <p>Read more</p>
+        <ul>
+            {% for post in similar_subjects %}
+                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</section>
 
 {% include footer.html %}

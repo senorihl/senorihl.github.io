@@ -32,3 +32,16 @@ ul,ol {
 .width-fit {
   width: 100%;
 }
+
+@import "../node_modules/@picocss/pico/scss/colors";
+
+.warning {
+  background-color: rgba(244, 93, 44, 50%);
+  color: rgba(241, 241, 241, 80%);
+  font-weight: 500;
+  border-radius: var(--pico-border-radius);
+  margin: var(--pico-spacing);
+  padding: var(--pico-spacing);
+  box-shadow: var(--pico-box-shadow);
+  border: 1px solid var(--pico-blockquote-border-color);
+}

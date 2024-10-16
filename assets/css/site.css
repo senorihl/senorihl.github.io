@@ -3068,4 +3068,19 @@ ul.list-inline > li:not(:last-child):after, ol.list-inline > li:not(:last-child)
   padding: var(--pico-spacing);
 }
 
+.width-fit {
+  width: 100%;
+}
+
+.warning {
+  background-color: rgba(244, 93, 44, 0.5);
+  color: rgba(241, 241, 241, 0.8);
+  font-weight: 500;
+  border-radius: var(--pico-border-radius);
+  margin: var(--pico-spacing);
+  padding: var(--pico-spacing);
+  box-shadow: var(--pico-box-shadow);
+  border: 1px solid var(--pico-blockquote-border-color);
+}
+
 /*# sourceMappingURL=site.css.map */
