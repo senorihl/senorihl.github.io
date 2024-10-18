@@ -2,7 +2,7 @@
 layout: post
 published: true
 title: Technical implementation of SEO best practices
-subtitle: Learn essential technical SEO best practices, from optimizing website architecture and page speed to using structured data and mobile-first design, to boost your site's visibility and rankings in search engine results.
+description: Learn essential technical SEO best practices, from optimizing website architecture and page speed to using structured data and mobile-first design, to boost your site's visibility and rankings in search engine results.
 date: "2024-10-16"
 author: senorihl
 tags:

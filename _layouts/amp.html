@@ -1,9 +1,29 @@
 ---
-layout: compress
+layout: amp
 ---
 
-{% include header.html %}
-
+<!doctype html>
+<html ⚡="" lang="en">
+<head>
+    <meta charset="utf-8">
+    {% seo %}
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    {% inline_css assets/css/amp.css %}
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+</head>
+<body>
+<nav class="container">
+    <ul>
+        <li><strong><a class="contrast"
+                       href="{{ '/' | relative_url }}">{{ site.title }}</a></strong>
+        </li>
+    </ul>
+    <ul>
+        <li><a href="{{ '/aboutme' | relative_url }}">About me</a></li>
+        <li><a href="{{ '/projects' | relative_url }}">Projects</a></li>
+    </ul>
+</nav>
 <article>
     <hgroup class="container">
         <h1>{{ page.title }}</h1>
@@ -42,38 +62,6 @@ layout: compress
                     <strong><a href="https://github.com/{{ parts[0] }}/{{ parts[1] }}"
                                target="_blank">{{ parts[1] }}</a></strong>
                 </p>
-                {% if page.gh-badge.size > 0 %}
-                    <div>
-                        {% for badge in page.gh-badge %}
-                            {% case badge %}
-                                {% when 'star' %}
-                                    <a class="github-button"
-                                       href="https://github.com/{{ gh_user }}/{{ gh_repo }}"
-                                       data-color-scheme="no-preference: light; light: light; dark: dark;"
-                                       data-size="large" data-show-count="true"
-                                       aria-label="Star senorihl/dsds on GitHub">Star</a>
-                                {% when 'watch' %}
-                                    <a class="github-button"
-                                       href="https://github.com/{{ gh_user }}/{{ gh_repo }}/subscription"
-                                       data-color-scheme="no-preference: light; light: light; dark: dark;"
-                                       data-size="large" data-show-count="true"
-                                       aria-label="Watch senorihl/dsds on GitHub">Watch</a>
-                                {% when 'fork' %}
-                                    <a class="github-button"
-                                       href="https://github.com/{{ gh_user }}/{{ gh_repo }}/fork"
-                                       data-color-scheme="no-preference: light; light: light; dark: dark;"
-                                       data-size="large" data-show-count="true"
-                                       aria-label="Fork buttons/github-buttons on GitHub">Fork</a>
-                                {% when 'follow' %}
-                                    <a class="github-button" href="https://github.com/{{ gh_user }}"
-                                       data-color-scheme="no-preference: light; light: light; dark: dark;"
-                                       data-size="large" data-show-count="true"
-                                       aria-label="Follow @senorihl on GitHub">Follow @{{ gh_user }}</a>
-                            {% endcase %}
-                        {% endfor %}
-                    </div>
-                    <script async defer src="https://buttons.github.io/buttons.js"></script>
-                {% endif %}
             </div>
         {% endif %}
         {% for tag in page.tags %}
@@ -81,9 +69,9 @@ layout: compress
                 <p class="warning">This article is AI generated for testing purpose and should not be considered as accurate.</p>
             {% endif %}
         {% endfor %}
-
-        {{ content }}
+        {{ content | markdownify | amp_images }}
     </div>
+
 </article>
 
 {% if page.previous.url or page.next.url %}
@@ -119,10 +107,10 @@ layout: compress
         <p>Read more</p>
         <ul>
             {% for post in similar_subjects %}
-                <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                <li><a href="{{ post.url | prepend: '/amp' }}">{{ post.title }}</a></li>
             {% endfor %}
         </ul>
     {% endif %}
 </section>
-
-{% include footer.html %}
+</body>
+</html>

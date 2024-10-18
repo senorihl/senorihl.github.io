@@ -9,9 +9,11 @@
   "private": true,
   "dependencies": {
     "@picocss/pico": "^2.0.6",
-    "@primer/css": "^21.4.0"
-  },
-  "devDependencies": {
-    "sass": "^1.79.5"
+    "gulp": "^5.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-media-queries-splitter": "^1.0.3",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.80.2",
+    "through2": "^4.0.2"
   }
 }

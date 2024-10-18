@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Document Oriented Development
-subtitle: An architecture idea to speed up your page and application
+description: An architecture idea to speed up your page and application
 tags: [ architecture, idea, document oriented development ] 
 ---
 

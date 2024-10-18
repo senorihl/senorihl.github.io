@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Docker &#10005; cron : the struggle of web project"
-subtitle: Run cronjob beside classical website with docker-compose
+description: Run cronjob beside classical website with docker-compose
 tags: [ Docker, docker-compose, php, cron ]
 author: senorihl
 gh-repo: senorihl/docker-compose-cronjob

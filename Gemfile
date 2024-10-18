@@ -1,8 +1,12 @@
 source 'https://rubygems.org'
 
-gem 'github-pages', group: :jekyll_plugins
-gem "jekyll-github-metadata"
-gem "jekyll-minifier"
-gem "jekyll-octicons"
+gem 'jekyll', group: :jekyll_plugins
+gem 'amp-jekyll', '~> 1.0'
+gem 'jekyll-github-metadata'
+gem 'jekyll-minifier'
+gem 'jekyll-octicons'
+gem 'jekyll-paginate'
 gem 'jekyll-redirect-from'
-gem "jemoji"
+gem 'jekyll-seo-tag'
+gem 'jekyll-sitemap'
+gem 'jemoji'

@@ -2,7 +2,7 @@
 layout: post
 published: true
 title: Elections in France — My contribution for LeMonde.fr
-subtitle: Just some links to get all the work I've done on LeMonde.fr election pages
+description: Just some links to get all the work I've done on LeMonde.fr election pages
 date: '2020-03-13'
 tags:
   - PHP

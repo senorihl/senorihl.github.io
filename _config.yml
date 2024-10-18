@@ -1,5 +1,7 @@
+author: Senorihl
 title: Senorihl
 description: Developer and Software Craftman
+tagline: Developer and Software Craftman
 title-separator: —
 timezone: "Europe/Paris"
 permalink: /:year/:month/:slug/
@@ -9,19 +11,44 @@ date_format: "%B %-d, %Y"
 google_tracking_id: UA-70834668-4
 repository: senorihl/senorihl.github.io
 
-exclude: [ package.json, yarn.lock, .idea, node_modules, vendor ]
+social:
+  name: Senorihl
+  links:
+    - https://github.com/senorihl
+    - https://www.linkedin.com/in/senorihl
+    - https://mastodon.social/@senorihl
+    - https://stackoverflow.com/u/senorihl
+    - https://bsky.app/profile/senorihl.bsky.social
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      seo_description_max_words: 200
+
+exclude: [ package.json, yarn.lock, .idea, node_modules, vendor, gulpfile.js, Gemfile, entrypoint.sh ]
 
 plugins:
-  - jekyll-octicons
+  - amp-jekyll
   - jekyll-github-metadata
-  - jemoji
-  - jekyll-paginate
-  - jekyll-sitemap
   - jekyll-minifier
+  - jekyll-octicons
+  - jekyll-paginate
   - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
 
 whitelist:
+  - amp-jekyll
+  - jekyll-github-metadata
+  - jekyll-minifier
+  - jekyll-octicons
+  - jekyll-paginate
   - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jemoji
 
 compress_html:
   clippings: all
