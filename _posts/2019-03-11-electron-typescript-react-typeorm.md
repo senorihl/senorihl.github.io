@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Electron × TypeScript × React × TypeORM
-subtitle: Be my guest at the Electron table, take a seat and order your dishes, I'll be pleased to serve you 🍽️
+description: Be my guest at the Electron table, take a seat and order your dishes, I'll be pleased to serve you 🍽️
 tags: [ Electron, Webpack, React, TypeORM, TypeScript ]
 author: senorihl
 gh-repo: senorihl/demo-electron-typescript-react-typeorm

@@ -2,7 +2,7 @@
 layout: post
 published: true
 title: Using variant in React Native 🤖🍏
-subtitle: Setting up a monorepo for one app with different declination
+description: Setting up a monorepo for one app with different declination
 date: "2021-03-05"
 tags:
   - React Native
