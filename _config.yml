@@ -50,13 +50,6 @@ whitelist:
   - jekyll-sitemap
   - jemoji
 
-workbox:
-  precache_glob_patterns: # Optional
-    - "assets/{js,css,fonts}/**/*.{js,css,eot,svg,ttf,woff}"
-    - index.html
-    - "/aboutme/index.html"
-    - "/projects/index.html"
-
 compress_html:
   clippings: all
   comments: all
