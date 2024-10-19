@@ -37,6 +37,7 @@ plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-workbox-plugin
   - jemoji
 
 whitelist:
@@ -48,7 +49,15 @@ whitelist:
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
+  - jekyll-workbox-plugin
   - jemoji
+
+workbox:
+  precache_glob_patterns: # Optional
+    - "assets/{js,css,fonts}/**/*.{js,css,eot,svg,ttf,woff}"
+    - index.html
+    - "/aboutme/index.html"
+    - "/projects/index.html"
 
 compress_html:
   clippings: all

@@ -41,6 +41,10 @@ exports.build = function build() {
 
             cb(null, chunk)
         }))
-        //.pipe(cleanCSS())
+        // .pipe(cleanCSS())
         .pipe(gulp.dest('./assets/css'));
 }
+
+exports.watch = gulp.series(exports.build, function watch() {
+    gulp.watch('./_sass/**/*.scss', exports.build)
+});
