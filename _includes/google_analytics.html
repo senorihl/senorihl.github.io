@@ -1,12 +1,29 @@
-<script type="text/javascript">
-    var _iub = _iub || [];
-    _iub.csConfiguration = {"siteId":3805214,"cookiePolicyId":91270431,"lang":"en","storage":{"useSiteId":true}};
-</script>
-<script type="text/javascript" src="https://cs.iubenda.com/autoblocking/3805214.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/gpp/stub.js"></script>
-<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_tracking_id }}"></script>
 <script>
+    var klaroConfig = {
+        services: [
+            {
+                default: true,
+                name: 'google-analytics',
+                title: 'Google Analytics',
+                purposes: ['analytics'],
+            },
+        ],
+        callback: function(consent, service) {
+            gtag("consent", "update", {
+                analytics_storage: consent ? "granted" : "denied",
+                ad_storage: "denied",
+                ad_user_data: "denied",
+                ad_personalization: "denied"
+            });
+        },
+    };
+</script>
+<script defer data-config="klaroConfig" type="application/javascript" src="https://cdn.kiprotect.com/klaro/v0.7/klaro.js"></script>
+<link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css">
+
+<script  type="application/javascript"
+         src="https://www.googletagmanager.com/gtag/js?id={{ site.google_tracking_id }}"></script>
+<script  type="application/javascript">
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());

@@ -10,5 +10,3 @@ gem 'jekyll-redirect-from'
 gem 'jekyll-seo-tag'
 gem 'jekyll-sitemap'
 gem 'jemoji'
-
-gem "jekyll-workbox-plugin", "~> 0.0.2"

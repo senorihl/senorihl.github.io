@@ -37,7 +37,6 @@ plugins:
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-workbox-plugin
   - jemoji
 
 whitelist:
@@ -49,7 +48,6 @@ whitelist:
   - jekyll-redirect-from
   - jekyll-seo-tag
   - jekyll-sitemap
-  - jekyll-workbox-plugin
   - jemoji
 
 workbox:
