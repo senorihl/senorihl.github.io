@@ -6,10 +6,22 @@
                 name: 'google-analytics',
                 title: 'Google Analytics',
                 purposes: ['analytics'],
+                cookies: [/^_ga/],
+                callback: function(consent) {
+                    gtag("consent", "update", {
+                        analytics_storage: consent ? "granted" : "denied",
+                        ad_storage: "denied",
+                        ad_user_data: "denied",
+                        ad_personalization: "denied"
+                    });
+                },
             },
         ],
         callback: function(consent, service) {
-            gtag("consent", "update", {
+            console.log(
+                'User consent for service ' + service.name + ': consent=' + consent
+            );
+            service === 'google-analytics'  && gtag("consent", "update", {
                 analytics_storage: consent ? "granted" : "denied",
                 ad_storage: "denied",
                 ad_user_data: "denied",
