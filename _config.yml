@@ -8,7 +8,7 @@ permalink: /:year/:month/:slug/
 paginate: 6
 excerpt_length: 50
 date_format: "%B %-d, %Y"
-google_tracking_id: UA-70834668-4
+google_tracking_id: G-TCTL9EV6XD
 repository: senorihl/senorihl.github.io
 
 social:
