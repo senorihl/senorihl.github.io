@@ -18,7 +18,8 @@ social:
     - https://www.linkedin.com/in/senorihl
     - https://mastodon.social/@senorihl
     - https://stackoverflow.com/u/senorihl
-    - https://bsky.app/profile/senorihl.bsky.social
+    - https://bsky.app/profile/senorihl.link
+    - https://www.instagram.com/senorihl.link
 
 defaults:
   - scope:
@@ -61,4 +62,6 @@ social_media:
   github: senorihl
   linkedin: senorihl
   mastodon: senorihl
+  instagram: senorihl.link
+  bluesky: senorihl.link
   stackoverflow: 2414324
