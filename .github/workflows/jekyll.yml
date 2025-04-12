@@ -63,10 +63,10 @@ jobs:
           sed -i "s#%PAGE_ORIGIN%#${{ steps.pages.outputs.origin }}#g" _config.github.yml
           sed -i "s#%PAGE_BASE_URL%#${{ steps.pages.outputs.base_path }}#g" _config.github.yml
           cat _config.github.yml
-          echo "${{ steps.pages.outputs.base_url }}"
-          echo "${{ steps.pages.outputs.origin }}"
-          echo "${{ steps.pages.outputs.host }}"
-          echo "${{ steps.pages.outputs.base_path }}"
+          echo "base_url=${{ steps.pages.outputs.base_url }}"
+          echo "origin=${{ steps.pages.outputs.origin }}"
+          echo "host=${{ steps.pages.outputs.host }}"
+          echo "base_path=${{ steps.pages.outputs.base_path }}"
           bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}" --trace --config _config.yml,_config.github.yml
         env:
           JEKYLL_ENV: production
