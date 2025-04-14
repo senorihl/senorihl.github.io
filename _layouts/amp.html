@@ -13,21 +13,6 @@ layout: amp
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     {% if site.google_tracking_id %}
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
-    <amp-analytics type="gtag" data-credentials="include">
-        <script type="application/json">
-            {
-                "vars" : {
-                    "gtag_id": "{{ site.google_tracking_id }}",
-                    "config" : {
-                        "{{ site.google_tracking_id }}": {
-                            "groups": "default",
-                            "allow_ad_personalization_signals": false
-                        }
-                    }
-                }
-            }
-        </script>
-    </amp-analytics>
     {% endif %}
 </head>
 <body>
@@ -130,5 +115,20 @@ layout: amp
         </ul>
     {% endif %}
 </section>
+<amp-analytics type="gtag" data-credentials="include">
+    <script type="application/json">
+        {
+            "vars" : {
+                "gtag_id": "{{ site.google_tracking_id }}",
+                    "config" : {
+                        "{{ site.google_tracking_id }}": {
+                            "groups": "default",
+                            "allow_ad_personalization_signals": false
+                        }
+                    }
+                }
+            }
+    </script>
+</amp-analytics>
 </body>
 </html>
