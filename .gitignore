@@ -1,9 +1,3 @@
-_site/
-.sass-cache/
 node_modules/
-.jekyll-cache/
-.jekyll-metadata
-.bundle/
-vendor/
 .idea/
-Gemfile.lock
+dist/
